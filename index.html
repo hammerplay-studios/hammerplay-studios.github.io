@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://example.com/">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Hammerplay Technical Documents</title>
+  <title>Hammerplay Documents</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Home";
+    var mkdocs_page_name = "Getting Started";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = "/";
   </script>
@@ -37,7 +37,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Hammerplay Technical Documents</a>
+        <a href="." class="icon icon-home"> Hammerplay Documents</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,17 +47,33 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Getting Started</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-version-control">Setting up version control</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#git-clients">Git Clients</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
+    <li class="toctree-l3"><a class="reference internal" href="#tips">Tips</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-ideas-form-and-who-makes-the-call">How do ideas form and who makes the call?!</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#milestones">Milestones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#emails-slack-whatsapp">Emails? Slack? WhatsApp?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#workspace">Workspace</a>
     </li>
     </ul>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="best-practices/">Best Practices</a>
                     </li>
                 </ul>
       </div>
@@ -69,7 +85,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Hammerplay Technical Documents</a>
+        <a href=".">Hammerplay Documents</a>
       </nav>
 
       
@@ -81,7 +97,7 @@
     
       
     
-    <li>Home</li>
+    <li>Getting Started</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -93,21 +109,43 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="getting-started">Getting Started</h1>
+<p>There's an expectation from every developer now a days. These are the set of tools that you require to get started before jumping inside a project.</p>
+<h2 id="setting-up-version-control">Setting up version control</h2>
+<p>Any company immediately checks whether you have an Github account, it's like a developer's business card. Once you have created your account, give your github handle to your <strong><em>Techical Lead</em></strong> so he can add you to the company's team account. Learn the concepts of git like <code>clone</code>, <code>push</code>, <code>pull</code>, <code>branches</code>, <code>merge</code>, <code>rebase</code> and <code>pull requests</code>. </p>
+<p>You can look at <a href="https://www.git-tower.com/learn/git/ebook/">Git tutorials</a> here.</p>
+<h3 id="git-clients">Git Clients</h3>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><a href="https://git-fork.com/">Git Fork</a> (Free/Paid)</li>
+<li><a href="https://www.sourcetreeapp.com/">Source Tree</a> (Free)</li>
+<li><a href="https://www.git-tower.com/">Git Tower</a> (Paid)</li>
+<li><a href="https://magit.vc/">Magit</a> (Free)</li>
+<li><a href="https://git-scm.com/">CLI</a> like a pro (Free)</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<h3 id="tips">Tips</h3>
+<ul>
+<li>Make sure you have a professional github handle, please don't use hammerplay name in it; Even if you leave us you still want to have that account.</li>
+<li>Don't work on the main branch, right after you create new repo, after adding README.md or .gitignore, create a <strong>develop</strong> branch and work from there.</li>
+<li>Plan your .gitignore from start or get it from another project. Folders like <strong>Builds</strong> should be ignored from the start, and shouldn't be accidently committed.</li>
+<li>Don't keep your project files inside sub folders. For example, Unity project should have <strong>Assets</strong> in the root of the git folder.</li>
+<li>Keep your projects organized in one <strong>projects</strong> folder.</li>
+<li>Naming conventions are very important, we'll cover more on that in best practices. Root git folder should be in smaller cases and use '-' as space. For example <strong>sheep-battle</strong>.</li>
+<li>When working with binary files like your <strong>images, sounds, textures, and scenes</strong> in a team; Communicate with the other team member otherwise you'll be stepping toes during git merge and losing data.</li>
+<li>Make smaller commits or follow <a href="https://www.git-tower.com/learn/git/ebook/en/desktop-gui/advanced-topics/git-flow/">git-flow</a> method, it'll keep you organized.</li>
+</ul>
+<h2 id="communication">Communication</h2>
+<p>Team work is essential at Hammerplay, we follow mostly Agile methodologies. To simplify the concepts, we don't have project managers, that means we have to communicate with the rest of the team ourselves, you need an asset?! you need to talk with your producer if there is one, or talk with the artist/developer directly.</p>
+<h3 id="how-do-ideas-form-and-who-makes-the-call">How do ideas form and who makes the call?!</h3>
+<p>Scrum/floor discussion, we all just have a talk on what we want to achieve and what the project ideas are, we vote on the ideas as a group and make a list and try to go by that list. It's messy but it works best with creative projects.</p>
+<h3 id="milestones">Milestones</h3>
+<p>Once the project is discussed each of the team mate comes up with estimates on how long it'll take, and further break down these milestones as <strong>prototype, alpha, internal beta, public beta, and release</strong>, there are no work timings, we just expect the milestones to be done with the estimates that you have already given, some times estimates are off, please raise a flag if things are not going by your timings and talk to your team for newer action plans. Sync up atleast two times a week with your project mates.</p>
+<h3 id="emails-slack-whatsapp">Emails? Slack? WhatsApp?</h3>
+<p><strong>Mails</strong>: Only use for official talks, like talking to a client, even though most of clients jump on Slack channels as well.</p>
+<p><strong>WhatsApp</strong>: Avoid project discussions here unless you want to notify someone who is not reachable by Slack. You can say <em>"you're not coming for work"</em>, or <em>"you'll be late"</em> or just share memes.</p>
+<p><strong>Slack</strong>: Post pandemic, Slack has completely changed how we work at our office. And moving forward we'll be using this method regardless. Projects are usually in each channels, so keep your project discussions inside that channel and don't bother people on direct messaging unless it's private.</p>
+<p><strong>Floor</strong>: Floor talk is the easiet form so far, this is best for iterations, like going through assets, checking mechanics of a gameplay. <strong>Caution: You could be disturbing/distracting them from their work, respect their space and timings</strong></p>
+<h2 id="workspace">Workspace</h2>
+<p>Write about office stuff, lunch, theatre room, devices/office assets checked out of office..etc Work timings, code of conduct</p>
               
             </div>
           </div>
@@ -115,7 +153,7 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="best-practices/" class="btn btn-neutral float-right" title="Best Practices">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -143,7 +181,7 @@ docs/
     
     
     
-      <span><a href="about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="best-practices/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -162,5 +200,5 @@ docs/
 
 <!--
 MkDocs version : 1.2.1
-Build Date UTC : 2021-07-02 10:40:24.942920+00:00
+Build Date UTC : 2021-07-02 20:22:05.373586+00:00
 -->

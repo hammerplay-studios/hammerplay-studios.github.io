@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://example.com/best-practices/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Best Practices - Hammerplay Documents</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Best Practices";
+    var mkdocs_page_input_path = "best-practices.md";
+    var mkdocs_page_url = "/best-practices/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hammerplay Documents</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Getting Started</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Best Practices</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#naming-conventions">Naming Conventions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#project-folder-structure">Project Folder Structure</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#filenames">Filenames</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coding">Coding</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#namespaces-and-classes">Namespaces and Classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables-properties-constants-enums">Variables, Properties, Constants, Enums</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#singletons-and-managers">Singletons and Managers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delegates-and-events">Delegates and Events</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hammerplay Documents</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Best Practices</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="best-practices">Best Practices</h1>
+<p>An accumlation of what we have learnt from our previous and current projects, what works and what doesn't work, and where it can be improved.</p>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>This has been one of the nightmares in our studios, hopefully artists also follow these steps, but by the end of the day, developers are the one who puts the project together, so make sure you maintain these standards.</p>
+<h3 id="project-folder-structure">Project Folder Structure</h3>
+<p>Try to maintain this folder structure for all of the projects, its not strict and are subjected to change as per project requirements.</p>
+<pre><code>ProjectFolder (sheep-battle)
+    |-Assets
+        |-Media
+            |-Sprites
+                |-UI
+                |-Game
+            |-Audio
+                |-SFX
+                |-Music
+            |-Shaders
+            |-Materials
+            |-Fonts
+            |-Packs
+        |-Scripts
+            |-Game
+            |-UI
+            |-Misc
+        |-Scenes
+        |-Prefabs
+            |-Game
+            |-UI
+        |-Plugins
+</code></pre>
+<h3 id="filenames">Filenames</h3>
+<p>This one is bit tricky because it changes from project type and the file type. The general idea is not to you spaces in the filename, you can use a combination for UpperCamelCase <code>HealthBar</code> and dashes <code>HealthBar-Highlight</code></p>
+<pre><code>&lt;DescriptionNameOfTheFile&gt;-&lt;ContextOfTheFile&gt;-&lt;MoreContext&gt;...
+Back-Button
+Alert-Confirmation
+Alert-Window
+SheepBattle-Icon
+SheepBattle-Splash
+</code></pre>
+<p>Try to group similar context to folders to keep things organized.</p>
+<h2 id="coding">Coding</h2>
+<h3 id="namespaces-and-classes">Namespaces and Classes</h3>
+<p>All the class names and namespaces are in UpperCamelCase this included both C# and Typescript. Namespaces start with <code>Hammerplay.&lt;ProductName&gt;</code> make sure you use them from the start for easy organization. If it's a common code just use <code>Hammerplay</code>.</p>
+<pre><code>// C#
+namespace Hammerplay.SheepBattle {
+    public class GameManager: Monobehavior {
+        // Code here
+    }
+}
+
+// Typescript
+export default class SheepController {
+
+}
+</code></pre>
+<h3 id="variables-properties-constants-enums">Variables, Properties, Constants, Enums</h3>
+<p>Both private and public variables are all on lowerCamelCase <code>healthMeter</code> Properties should be used with UpperCamelCase <code>GameState</code> On the other hand, both enums and constants are named in UPPER_CASE <code>GAME_OVER</code></p>
+<pre><code>// If you want to expose the member variable in inspector don't use public
+[SerializedField] private int healthMeter;
+
+// Properties and methods are only way to access the object from outside
+// variables should never be directly exposed to other class.
+public int GameState {private set; get};
+
+// Try to have your defines in one class just like in C++
+public const int START_POSITION = 0;
+
+public enum GAME_STATE {
+    READY, IN_GAME, PAUSED, GAME_OVER
+}
+</code></pre>
+<h3 id="singletons-and-managers">Singletons and Managers</h3>
+<p>Managers are very useful to manage and maintain objects in a game, and objects accessing properties, methods and other managers through them. If <code>Bullet</code> objects want to access <code>Player</code> object, it can access through <code>GameManager</code> or if it happens through Physics callbacks such as <code>OnTriggerEnter</code> or <code>OnCollisionEnter</code></p>
+<p>They are useful for grouping functionality such as <code>UIManager</code>, <code>PoolManager</code>, <code>ConnectionManager</code> It's not a good practice to have the <code>Player</code> class as singelton. So how do we access them? Don't ever use the method <code>Find("GameManager").GetComponent&lt;GameManager&gt;</code> this is very slow and not efficient at all. Since we know only one of them is going to be there, Singletons to the rescue.</p>
+<p><strong>GameManager</strong></p>
+<pre><code>public class GameManager: MonoBehaviour {
+
+    private static GameManager instance; // This stores the one instance of the object as static.
+
+    private void Awake () {
+        instance = this; // We'll assign the first instance as static
+    }
+
+    private int totalScore;
+
+    // If there's a static method of the same name, 
+    // since it's accessible publicly add _ to the local method
+    private void _UpdateScore (int score) {
+        totalScore += score;
+    }
+
+    // This method will be accessible to every other class in the game
+    public void static UpdateScore (int score){
+        instance._UpdateScore (score);
+    }
+}
+</code></pre>
+<p><strong>Player</strong></p>
+<pre><code>public class Player: MonoBehaviour {
+    private void KillEnemy () {
+        // This way it's much cleaner to access and easy to maintain
+        GameManager.UpdateScore (10);
+    }
+}
+</code></pre>
+<h3 id="delegates-and-events">Delegates and Events</h3>
+<p>Managers as singletons are great to call a method from another object without having a reference to it, but what if your Managers want to notify other objects of some change such when game time runs out, or player pickups up a power up and enemy behavior needs to change. <code>Event</code> callbacks are very useful for Managers to notify other objects, without other objects constantly listening to it in a <code>Update</code> loop.</p>
+<p><strong>GameManager</strong>
+    public class GameManager: MonoBehaviour {</p>
+<pre><code>    private static GameManager instance; // This stores the one instance of the object as static.
+
+    private void Awake () {
+        instance = this; // We'll assign the first instance as static
+    }
+
+    private int totalScore;
+
+    // If there's a static method of the same name, 
+    // since it's accessible publicly add _ to the local method
+    private void _UpdateScore (int score) {
+        totalScore += score;
+        // Notify any listeners that there has been a score change
+        if (OnScoreChanged != null)
+            OnScoreChanged (totalScore);
+    }
+
+    // Make sure the delegates have 'Handler' in them.
+    // This is basically a template of how event callback method should be.
+    public delegate void ScoreHandler (int score);
+    // Use the word, Add, Remove, Changed depending on the event
+    // Events should start with the word 'On' before, just like OnClick, OnMouse
+    public static event ScoreHandler OnScoreChanged;
+
+    // This method will be accessible to every other class in the game
+    public void static UpdateScore (int score){
+        instance._UpdateScore (score);
+    }
+}
+</code></pre>
+<p><strong>UIManager</strong></p>
+<pre><code>public class UIManager: MonoBehaviour {
+
+    [Serialized] private Text scoreText;
+
+    private void OnEnable () {
+        // Subscribe to event changes
+        GameManager.OnScoreChanged += GameManager_OnScoreChanged;
+    }
+
+    private void OnDisable () {
+        // Always remember to unsubscribe events.
+        GameManager.OnScoreChanged -= GameManager_OnScoreChanged;
+    }
+
+    // This method is the exact template of the delegate
+    // This method will be called whenever there's a score change.
+    private void GameManager_OnScoreChanged (int score) {
+        scoreText.text = string.Format ("Score:{0}", score);
+    }
+}
+</code></pre>
+<p>In this way, everything is very modular. The player doesn't directly talk with the UIManager, the score is updated and notified to which ever object is listening to it.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
