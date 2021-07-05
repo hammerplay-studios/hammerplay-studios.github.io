@@ -110,11 +110,11 @@
             <div class="section">
               
                 <h1 id="best-practices">Best Practices</h1>
-<p>An accumlation of what we have learnt from our previous and current projects, what works and what doesn't work, and where it can be improved.</p>
+<p>An accumulation of what we have learned from our previous and current projects, we took what works and what doesn't, and where it can be improved.</p>
 <h2 id="naming-conventions">Naming Conventions</h2>
-<p>This has been one of the nightmares in our studios, hopefully artists also follow these steps, but by the end of the day, developers are the one who puts the project together, so make sure you maintain these standards.</p>
+<p>Naming convention has been one of the nightmares in our studios hopefully, artists also follow these steps, but by the end of the day, developers are the one who puts the project together, so make sure you maintain these standards.</p>
 <h3 id="project-folder-structure">Project Folder Structure</h3>
-<p>Try to maintain this folder structure for all of the projects, its not strict and are subjected to change as per project requirements.</p>
+<p>Try to maintain this folder structure for all projects; it's not strict and is subjected to change as per project requirements.</p>
 <pre><code>ProjectFolder (sheep-battle)
     |-Assets
         |-Media
@@ -139,7 +139,7 @@
         |-Plugins
 </code></pre>
 <h3 id="filenames">Filenames</h3>
-<p>This one is bit tricky because it changes from project type and the file type. The general idea is not to you spaces in the filename, you can use a combination for UpperCamelCase <code>HealthBar</code> and dashes <code>HealthBar-Highlight</code></p>
+<p>This one is a bit tricky because it changes from the project type and the file type. The general idea is not to use spaces in a filename; you can use a combination for UpperCamelCase <code>HealthBar</code> and dashes <code>HealthBar-Highlight</code></p>
 <pre><code>&lt;DescriptionNameOfTheFile&gt;-&lt;ContextOfTheFile&gt;-&lt;MoreContext&gt;...
 Back-Button
 Alert-Confirmation
@@ -164,7 +164,7 @@ export default class SheepController {
 }
 </code></pre>
 <h3 id="variables-properties-constants-enums">Variables, Properties, Constants, Enums</h3>
-<p>Both private and public variables are all on lowerCamelCase <code>healthMeter</code> Properties should be used with UpperCamelCase <code>GameState</code> On the other hand, both enums and constants are named in UPPER_CASE <code>GAME_OVER</code></p>
+<p>Both private and public variables are all on lowerCamelCase <code>healthMeter</code> Properties should be used with UpperCamelCase <code>GameState</code> On the other hand, both enums and constants are named in UPPER_CASE `GAME_OVER</p>
 <pre><code>// If you want to expose the member variable in inspector don't use public
 [SerializedField] private int healthMeter;
 
@@ -180,8 +180,8 @@ public enum GAME_STATE {
 }
 </code></pre>
 <h3 id="singletons-and-managers">Singletons and Managers</h3>
-<p>Managers are very useful to manage and maintain objects in a game, and objects accessing properties, methods and other managers through them. If <code>Bullet</code> objects want to access <code>Player</code> object, it can access through <code>GameManager</code> or if it happens through Physics callbacks such as <code>OnTriggerEnter</code> or <code>OnCollisionEnter</code></p>
-<p>They are useful for grouping functionality such as <code>UIManager</code>, <code>PoolManager</code>, <code>ConnectionManager</code> It's not a good practice to have the <code>Player</code> class as singelton. So how do we access them? Don't ever use the method <code>Find("GameManager").GetComponent&lt;GameManager&gt;</code> this is very slow and not efficient at all. Since we know only one of them is going to be there, Singletons to the rescue.</p>
+<p>Managers are useful to manage and maintain objects in a game. Objects can access properties, methods, and other managers through them. If <code>Bullet</code> objects want to access a <code>Player</code> object, it can access through <code>GameManager</code> or if it happens through Physics callbacks such as <code>OnTriggerEnter</code> or <code>OnCollisionEnter</code></p>
+<p>Managers are useful for grouping functionality such as <code>UIManager</code>, <code>PoolManager</code>, <code>ConnectionManager</code> It's not a good practice to have the <code>Player</code> class as Singleton. So how do we access them? Don't ever use the method <code>Find("GameManager").GetComponent&lt;GameManager&gt;</code> this is very slow and not efficient at all; since we know only one of them is going to be there, Singletons to the rescue.</p>
 <p><strong>GameManager</strong></p>
 <pre><code>public class GameManager: MonoBehaviour {
 
@@ -214,10 +214,11 @@ public enum GAME_STATE {
 }
 </code></pre>
 <h3 id="delegates-and-events">Delegates and Events</h3>
-<p>Managers as singletons are great to call a method from another object without having a reference to it, but what if your Managers want to notify other objects of some change such when game time runs out, or player pickups up a power up and enemy behavior needs to change. <code>Event</code> callbacks are very useful for Managers to notify other objects, without other objects constantly listening to it in a <code>Update</code> loop.</p>
-<p><strong>GameManager</strong>
-    public class GameManager: MonoBehaviour {</p>
-<pre><code>    private static GameManager instance; // This stores the one instance of the object as static.
+<p>Managers as singletons make it easy to call a method from another object without having a reference to it, but what if your Managers want to notify other objects of some change that happened in the game, such as when game time runs out, or player pickups up a power-up and enemy behavior needs to change. <code>Event</code> callbacks are very useful for Managers to notify other objects, without other objects constantly listening to them in a <code>Update</code> loop.</p>
+<p><strong>GameManager</strong></p>
+<pre><code>public class GameManager: MonoBehaviour {
+
+    private static GameManager instance; // This stores the one instance of the object as static.
 
     private void Awake () {
         instance = this; // We'll assign the first instance as static
@@ -269,7 +270,7 @@ public enum GAME_STATE {
     }
 }
 </code></pre>
-<p>In this way, everything is very modular. The player doesn't directly talk with the UIManager, the score is updated and notified to which ever object is listening to it.</p>
+<p>In this way, everything is modular. The player doesn't directly need to talk with the UIManager; the score is updated and notified to whichever object is listening to it.</p>
               
             </div>
           </div>
